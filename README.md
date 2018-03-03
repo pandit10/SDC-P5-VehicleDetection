@@ -46,13 +46,13 @@ The goals / steps of this project are:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
 
-You're reading it!
+Writeup is added.
 
 ### Histogram of Oriented Gradients (HOG)
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in lines 49 through 60 of the file called `classifier.py`).  
+The code for this step is contained in lines 49 through 60 of the file `classifier.py`).  
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -70,7 +70,7 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 various combinations of parameters were tried and i judged operation based on the human ability to differentiate vehicle from non-vehicle by simply looking at the Hogg image representation. After collecting various combinations of parameters, I moved to the next gradation which was training a classifier to differentiate vehicles from non-vehicles based on the extracted feature , and further narrowing down the parameter option based on the classifier test accuracy.
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM in the file `classifier.py` specifically in lines 82 through 87, using different parameter combinations. Finally I settled for the following parameters based on classifier test/validation accuracy:
+Trained linear SVM can be found in the file `classifier.py` specifically in lines 82 through 87, using different parameter combinations. Finally I settled for the following parameters based on classifier test/validation accuracy:
 
 |Parameter |--------->| value|
 |----------||--------|
