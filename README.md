@@ -91,7 +91,7 @@ I trained a linear SVM in the file `classifier.py` specifically in lines 82 thro
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I used three window sizes to search the frame for classified vehicles, depending on the location in the image. Windows with 128 px size are used to detect new vehicles entering the frame from the sides, 96 px windows were used to detect vehicles in the near range across the image, as well as 64 px windows to detect far range vehicles. Over lapping values where mainly chosen by experimenting which values yielded better results.
+I used 3 window sizes to search the frame for classified vehicles, depending on the location in the image. Windows with 128 px size are used to detect new vehicles entering the frame from the sides, 96 px windows were used to detect vehicles in the near range across the image, as well as 64 px windows to detect far range vehicles. Over lapping values where mainly chosen by experimenting which values yielded better results.
 
 
 
@@ -116,7 +116,7 @@ Here's a [link to my video result](./project_video_cars.mp4)
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-In the lines 171 through 193 in the file `search_classify.py`, I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
+In the code lines 171 through 193 in `search_classify.py`, I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
@@ -139,7 +139,7 @@ Here's an example result showing the heatmap from a series of frames of video, t
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
 ##### Challenges
-* The hardest challenge was finding the most efficient feature vector to train the classifier and use to predict image windows. In addition, finding the best parameters for the HOG feature was very challenge in the sense of finding a balance point between prediction accuracy and number of features.
+* The challenge was finding the most efficient feature vector to train the classifier and use to predict image windows. In addition, finding the best parameters for the HOG feature was very challenge in the sense of finding a balance point between prediction accuracy and number of features.
 * Due to the slow processing of the video, testing was very time consuming. Any way of visualizing the output during runtime consumed even more time.
 * False positives are handled by the heat map, however, false negatives represent a huge weakness for this system, especially regarding vehicles in the far range.
 
