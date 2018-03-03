@@ -1,12 +1,12 @@
 # Vehicle Detection Project
 
-The goals / steps of this project are the following:
+The goals / steps of this project are:
 
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
 * Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
 * Note: for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
 * Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
-* Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
+* Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles .
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
@@ -67,7 +67,7 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and judged performance based on the human ability to differentiate vehicles from non-vehicles by simply looking at the HOG image representation. After collecting various combinations of parameters, I moved to the next step which was training a classifier to differentiate vehicles from non-vehicles based on the extracted features, and further narrowing down the parameter choices based on the classifier test accuracy.
+various combinations of parameters were tried and i judged operation based on the human ability to differentiate vehicle from non-vehicle by simply looking at the Hogg image representation. After collecting various combinations of parameters, I moved to the next gradation which was training a classifier to differentiate vehicles from non-vehicles based on the extracted feature , and further narrowing down the parameter option based on the classifier test accuracy.
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
 I trained a linear SVM in the file `classifier.py` specifically in lines 82 through 87, using different parameter combinations. Finally I settled for the following parameters based on classifier test/validation accuracy:
